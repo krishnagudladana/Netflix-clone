@@ -1,3 +1,7 @@
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDlQwhodjQ9D50qQm29W7AjezTn5HSG5MY",
   authDomain: "netflix-clone-1ec01.firebaseapp.com",
@@ -5,5 +9,12 @@ const firebaseConfig = {
   storageBucket: "netflix-clone-1ec01.appspot.com",
   messagingSenderId: "671492120029",
   appId: "1:671492120029:web:0e71f12dc7435daf5f2a34",
-  measurementId: "G-218BN8QQ6T"
+  measurementId: "G-218BN8QQ6T",
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+
+export { auth, db };
